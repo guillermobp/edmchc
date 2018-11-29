@@ -8,13 +8,11 @@
           <div class="card" style="height:100%">
             <div class="card-image">
               <figure class="image is-square">
-                <%= link_to (image_tag f.variant(
-                  combine_options: {
-                    resize: 'x200',
-                    crop: '200x200+0+0',
-                    gravity: 'north'
-                  }
-                ), class: 'is-square'), url_for(f)  %>
+                <%= link_to (image_tag f.variant(combine_options: {
+                  thumbnail: '200x200^',
+                  gravity: 'north',
+                  extent: '200x200'
+                }), class: 'is-square'), url_for(f)  %>
               </figure>
             </div>
           </div>
