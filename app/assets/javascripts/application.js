@@ -13,5 +13,4 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require lightbox.min.js
 //= require_tree .
