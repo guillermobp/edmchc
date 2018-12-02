@@ -39,7 +39,8 @@ section#actividades strong {
 }
 
 // Galería en escala de grises.
-section#fotos-charlas {
+section#fotos-charlas,
+section#fotos-ensayos {
   .columns:hover {
     filter: grayscale(100%);
     .column {
