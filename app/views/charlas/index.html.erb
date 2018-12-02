@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @charlas.each do |c| %>
+        <tr>
+            <td><%= c.titulo %></td>
+            <td><%= link_to 'editar', edit_charla_path(c) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
