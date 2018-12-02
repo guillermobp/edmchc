@@ -1,6 +1,7 @@
 class Encuentro < ApplicationRecord
   has_many :charlas
   has_many :exponentes
+  has_many :ensayos
 
   has_many_attached :fotos
 
