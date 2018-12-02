@@ -13,4 +13,15 @@ class Encuentro < ApplicationRecord
     end
     ary
   end
+
+  def fotos_ensayos
+    ary = Array.new
+    ensayos.each do |e|
+      e.fotos.each do |f|
+        ary.push(f)
+      end
+    end
+    ary
+  end
+
 end

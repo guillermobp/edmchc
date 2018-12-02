@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :exponentes, :encuentros, :charlas
+  resources :exponentes, :encuentros, :charlas, :ensayos
 
 end
