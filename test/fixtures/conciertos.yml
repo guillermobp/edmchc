@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2018-12-02
+  hora: 2018-12-02 12:32:06
+  lugar: MyString
+  obras: MyString
+  interpretes: MyString
+  encuentro: one
+
+two:
+  fecha: 2018-12-02
+  hora: 2018-12-02 12:32:06
+  lugar: MyString
+  obras: MyString
+  interpretes: MyString
+  encuentro: two

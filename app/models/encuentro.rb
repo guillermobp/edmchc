@@ -2,6 +2,7 @@ class Encuentro < ApplicationRecord
   has_many :charlas
   has_many :exponentes
   has_many :ensayos
+  has_many :conciertos
 
   has_many_attached :fotos
 
@@ -19,6 +20,16 @@ class Encuentro < ApplicationRecord
     ary = Array.new
     ensayos.each do |e|
       e.fotos.each do |f|
+        ary.push(f)
+      end
+    end
+    ary
+  end
+
+  def fotos_conciertos
+    ary = Array.new
+    conciertos.each do |c|
+      c.fotos.each do |f|
         ary.push(f)
       end
     end

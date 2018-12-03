@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Lugar</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @conciertos.each do |c| %>
+        <tr>
+            <td></td>
+            <td><%= c.fecha %></td>
+            <td><%= c.hora %></td>
+            <td><%= c.lugar %></td>
+            <td><%= link_to 'editar', edit_concierto_path(c) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
