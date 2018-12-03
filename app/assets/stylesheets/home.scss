@@ -40,7 +40,8 @@ section#actividades strong {
 
 // Galería en escala de grises.
 section#fotos-charlas,
-section#fotos-ensayos {
+section#fotos-ensayos,
+section#fotos-conciertos {
   .columns:hover {
     filter: grayscale(100%);
     .column {
