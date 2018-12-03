@@ -4,6 +4,9 @@ class Encuentro < ApplicationRecord
   has_many :ensayos
   has_many :conciertos
 
+  belongs_to :coordinador
+  accepts_nested_attributes_for :coordinador
+
   has_many_attached :fotos
 
   def fotos_charlas

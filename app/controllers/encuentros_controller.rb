@@ -8,7 +8,6 @@ class EncuentrosController < ApplicationController
     end
 
     def show
-        byebug
         @encuentro = Encuentro.find(params[:id])
     end
 
@@ -26,6 +25,7 @@ class EncuentrosController < ApplicationController
     private
 
         def encuentro_params
-            params.require(:encuentro).permit(fotos: [])
+            params.require(:encuentro).permit(:titulo, coordinador_attributes: [:nombre, :bio, :foto], fotos: [])
         end
+
 end

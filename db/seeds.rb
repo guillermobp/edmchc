@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-encuentro = Encuentro.create(version: 2017)
+coordinador = Coordinador.create(nombre: 'Sergio Berchenko (1973)', bio: "Compositor, arreglador y docente.\n\nDesde el año 2009 a la fecha sus obras han estado en recurrente rotación dentro de selectos circuitos nacionales e internacionales de música sinfónica y de cámara.\n\nEstas composiciones han sido programadas en las temporadas de destacados teatros de Asia, Europa y Latinoamérica.\n\nEn Chile sus composiciones han sido estrenadas por las más variadas agrupaciones y orquestas profesionales, juveniles e infantiles. Ha obtenido premios y reconocimientos tanto en Chile como en el extranjero.\n\nDesde el año 2016 es miembro del equipo docente del Conservatorio de Música de la Universidad Austral de Chile.")
+encuentro = Encuentro.create(version: 2017, coordinador: coordinador)
 
 Charla.create(fecha: '20171024', titulo: '¿Influencia del jazz? Reflexiones en torno al concepto armónico del jazz', expositor: 'Álvaro Menanteau', lugar: 'Conservatorio de Música UACh, entrada liberada', hora_inicio: '10:00', hora_termino: '11:30', encuentro: encuentro)
 Charla.create(fecha: '20171024', titulo: 'La integridad de la desarmonía', expositor: 'Julio Torres', lugar: 'Conservatorio de Música UACh, entrada liberada', hora_inicio: '11:45', hora_termino: '13:00', encuentro: encuentro)
