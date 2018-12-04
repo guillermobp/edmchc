@@ -6,17 +6,17 @@
         <div class="column is-6">
           <div class="card" style="height:100%">
             <div class="card-image">
+              <% if @encuentro.coordinador.foto.attached? %>
               <figure class="image is-square">
-                <% if @encuentro.coordinador.foto.attached? %>
                   <%= image_tag @encuentro.coordinador.foto.variant(
                     combine_options: {
-                      resize: '400',
-                      crop: '400x400+0+0',
-                      gravity: 'north'
+                      thumbnail: '400x400^',
+                      gravity: 'north',
+                      extent: '400x400'
                     }
                   ), class: 'is-square' %>
-                <% end %>
               </figure>
+              <% end %>
             </div>
             <div class="card-content">
               <div class="media">

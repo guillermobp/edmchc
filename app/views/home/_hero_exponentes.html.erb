@@ -7,17 +7,17 @@
         <div class="column is-4">
           <div class="card" style="height:100%">
             <div class="card-image">
+              <% if (e.foto.attached?) %>
               <figure class="image is-square">
-                <% if (e.foto.attached?) %>
                   <%= image_tag e.foto.variant(
                     combine_options: {
-                      resize: '400',
-                      crop: '400x400+0+0',
-                      gravity: 'north'
+                      thumbnail: '400x400^',
+                      gravity: 'north',
+                      extent: '400x40'
                     }
                   ), class: 'is-square' %>
-                <% end %>
               </figure>
+              <% end %>
             </div>
             <div class="card-content">
               <div class="media">
