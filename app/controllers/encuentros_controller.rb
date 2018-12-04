@@ -1,6 +1,11 @@
 class EncuentrosController < ApplicationController
+
     def index
         @encuentros = Encuentro.all
+    end
+
+    def new
+      @encuentro = Encuentro.new
     end
 
     def edit
@@ -9,6 +14,17 @@ class EncuentrosController < ApplicationController
 
     def show
         @encuentro = Encuentro.find(params[:id])
+    end
+
+    def create
+      @encuentro = Encuentro.new(encuentro_params)
+      if @encuentro.save
+        flash[:notice] = 'El encuentro ha sido creado exitosamente'
+        redirect_to @encuentro
+      else
+        flash[:alert] = 'Ha ocurrido un error intentando crear el encuentro'
+        redirect_to edit_encuentro_path(@encuentro)
+      end
     end
 
     def update
