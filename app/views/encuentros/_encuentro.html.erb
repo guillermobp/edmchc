@@ -10,13 +10,39 @@
     </div>
 
     <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <%= form.label :epigrafe, class: 'label' %>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= form.text_field :epigrafe, class: 'input' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
         <div class="field-label is-normal">
-            <label class="label">Título</label>
+            <%= form.label :titulo, class: 'label' %>
         </div>
         <div class="field-body">
             <div class="field">
                 <div class="control">
-                    <input type="text" class="input">
+                    <%= form.text_field :titulo, class: 'input' %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <%= form.label :bajada, class: 'label' %>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <%= form.text_field :bajada, class: 'input' %>
                 </div>
             </div>
         </div>
