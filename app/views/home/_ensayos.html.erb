@@ -1,7 +1,7 @@
-<section class="hero has-background-dark is-fullheight-with-navbar" id="fotos-charlas">
+<section class="hero has-background-dark is-fullheight-with-navbar" id="ensayos">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title is-1 has-text-white">Fotos Charlas 2017</h1>
+      <h1 class="title is-1 has-text-white">Ensayos <%= @encuentro.version %></h1>
       <div class="columns is-multiline is-mobile is-gapless">
         <% @encuentro.fotos_charlas.each do |f|%>
         <div class="column is-3">
@@ -12,7 +12,7 @@
                   thumbnail: '350x350^',
                   gravity: 'north',
                   extent: '350x350'
-                }), class: 'is-square', data: { jslghtbx: url_for(f), jslghtbx_group: 'fotos-charlas' }  %>
+                }), class: 'is-square', data: { jslghtbx: url_for(f), jslghtbx_group: 'fotos-ensayos' }  %>
               </figure>
             </div>
           </div>
