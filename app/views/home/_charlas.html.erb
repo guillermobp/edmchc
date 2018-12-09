@@ -21,6 +21,7 @@
                       </strong>
                       <br><%= "#{c.hora_inicio_display} - #{c.hora_termino_display} horas" %>
                       <br><%= c.lugar %>
+                      <br><%= link_to 'Ver Fotos', charla_fotos_path(c), class: 'button' if c.fotos.attached? %>
                     </p>
                     <% end %>
                   </div>
