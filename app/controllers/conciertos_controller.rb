@@ -42,6 +42,11 @@ class ConciertosController < ApplicationController
     def destroy
     end
 
+    def fotos
+      @fotos = Concierto.find(params[:id]).fotos
+      render layout: 'home'
+    end
+
     private
 
         def concierto_params

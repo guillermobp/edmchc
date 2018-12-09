@@ -18,6 +18,7 @@
                       </strong>
                       <br><%= c.obras %>
                       <br><%= c.interpretes %>
+                      <br><%= link_to 'Ver Fotos', concierto_fotos_path(c), class: 'button' if c.fotos.attached? %>
                     </p>
                   </div>
                 </div>

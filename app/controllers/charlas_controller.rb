@@ -40,6 +40,11 @@ class CharlasController < ApplicationController
         end
     end
 
+    def fotos
+      @fotos = Charla.find(params[:id]).fotos
+      render layout: 'home'
+    end
+
     private
 
         def charla_params

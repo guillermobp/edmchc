@@ -1,9 +1,9 @@
-<section class="galeria fotos hero has-background-dark is-fullheight" id="fotos-charla">
+<section class="galeria fotos hero has-background-dark is-fullheight" id="fotos-concierto">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title is-1 has-text-white">Fotos Charla</h1>
+      <h1 class="title is-1 has-text-white">Fotos Concierto</h1>
       <div class="columns is-multiline is-mobile is-gapless">
-        <% @charla.fotos.each do |f|%>
+        <% @fotos.each do |f|%>
         <div class="column is-3">
           <div class="card" style="height:100%">
             <div class="card-image">
@@ -12,7 +12,7 @@
                   thumbnail: '350x350^',
                   gravity: 'north',
                   extent: '350x350'
-                }), class: 'is-square', data: { jslghtbx: url_for(f), jslghtbx_group: 'fotos-charla' }  %>
+                }), class: 'is-square', data: { jslghtbx: url_for(f), jslghtbx_group: 'fotos-concierto' }  %>
               </figure>
             </div>
           </div>
