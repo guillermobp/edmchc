@@ -47,9 +47,7 @@ body {
   }
 
   // Galería en escala de grises.
-  section#fotos-charlas,
-  section#fotos-ensayos,
-  section#fotos-conciertos {
+  .galeria {
     .columns:hover {
       filter: grayscale(100%);
       .column {
