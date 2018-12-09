@@ -9,6 +9,10 @@ class Encuentro < ApplicationRecord
 
   has_many_attached :fotos
 
+  def charlas_por_dia
+    charlas.group(:fecha).select(:fecha)
+  end
+
   def fotos_charlas
     ary = Array.new
     charlas.each do |c|
