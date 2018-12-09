@@ -1,9 +1,9 @@
 <section class="hero has-background-dark is-fullheight-with-navbar" id="conciertos">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title is-1 has-text-white">Conciertos 2017</h1>
+      <h1 class="title is-1 has-text-white">Conciertos <%= @encuentro.version %></h1>
       <div class="tile is-ancestor">
-        <% @conciertos.each do |c| %>
+        <% @encuentro.conciertos.each do |c| %>
         <div class="tile is-parent">
           <article class="tile is-child notification">
             <div class="content">
