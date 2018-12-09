@@ -4,10 +4,8 @@ class Encuentro < ApplicationRecord
   has_many :ensayos
   has_many :conciertos
 
-  belongs_to :coordinador
-  accepts_nested_attributes_for :coordinador
-
   has_many_attached :fotos
+  has_one_attached :foto_quienes_somos
 
   def charlas_por_dia
     charlas.group(:fecha).select(:fecha)

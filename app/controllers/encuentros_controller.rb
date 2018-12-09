@@ -41,7 +41,7 @@ class EncuentrosController < ApplicationController
     private
 
         def encuentro_params
-            params.require(:encuentro).permit(:epigrafe, :titulo, :bajada, coordinador_attributes: [:nombre, :bio, :foto], fotos: [])
+            params.require(:encuentro).permit(:epigrafe, :titulo, :bajada, :titulo_quienes_somos, :cuerpo_quienes_somos, :foto_quienes_somos, fotos: [])
         end
 
 end
