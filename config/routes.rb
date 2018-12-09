@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :exponentes, :charlas, :ensayos, :conciertos, :encuentros, :coordinadores
+  resources :exponentes, :ensayos, :encuentros, :coordinadores
+
+  resources :charlas, :conciertos do
+    resources :fotos, only: [:index]
+  end
 
 end
