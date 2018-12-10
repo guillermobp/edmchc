@@ -89,81 +89,9 @@
         </div>
     </div>
 
-    <div class="field is-horizontal">
-        <div class="field-label is-normal"></div>
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <h3 class="title is-3">Quienes Somos</h3>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%= render partial: 'quienes_somos', locals: { form: form } %>
 
-    <div class="field is-horizontal">
-        <div class="field-label is-normal">
-            <%= form.label :foto, class: 'label' %>
-        </div>
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <% if @encuentro.foto_quienes_somos.attached? %>
-                        <%= image_tag @encuentro.foto_quienes_somos.variant(
-                            combine_options: {
-                                resize: '400',
-                                crop: '400x400+0+0',
-                                gravity: 'north'
-                            }
-                        ), class: 'is-square' %>
-                    <% end %>
-                </div>
-
-                <% unless 'show' == params[:action] %>
-                <div class="control">
-                    <div class="file">
-                        <label class="file-label">
-                            <%= form.file_field :foto_quienes_somos, class: 'file-input' %>
-                            <span class="file-cta">
-                                <span class="file-icon">
-                                    <i class="fas fa-upload"></i>
-                                </span>
-                                <span class="file-label">
-                                    Examinar
-                                </span>
-                            </span>
-                        </label>
-                    </div>
-                </div>
-                <% end %>
-            </div>
-        </div>
-    </div>
-
-    <div class="field is-horizontal">
-        <div class="field-label is-normal">
-            <%= form.label :titulo, class: 'label' %>
-        </div>
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <%= form.text_field :titulo_quienes_somos, class: 'input', readonly: 'show' == params[:action]  %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="field is-horizontal">
-        <div class="field-label is-normal">
-            <%= form.label :cuerpo, class: 'label' %>
-        </div>
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <%= form.text_area :cuerpo_quienes_somos, class: 'textarea', readonly: 'show' == params[:action] %>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%= render partial: 'coordinador', locals: { form: form } %>
 
     <% unless 'show' == params[:action] %>
     <div class="field is-horizontal">

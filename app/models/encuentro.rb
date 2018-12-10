@@ -6,6 +6,7 @@ class Encuentro < ApplicationRecord
 
   has_many_attached :fotos
   has_one_attached :foto_quienes_somos
+  has_one_attached :foto_coordinador
 
   def charlas_por_dia
     charlas.group(:fecha).select(:fecha)
