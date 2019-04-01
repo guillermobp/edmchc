@@ -1,0 +1,13 @@
+<%= form_with model: @encuentro do |form| %>
+<%= render partial: 'fotos', locals: { form: form } %>
+<div class="field is-horizontal">
+  <div class="field-label is-normal"></div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= form.button class: 'button is-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

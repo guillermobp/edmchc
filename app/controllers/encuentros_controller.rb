@@ -1,5 +1,5 @@
 class EncuentrosController < AdminController
-  before_action :find_encuentro, only: [:edit, :update]
+  before_action :find_encuentro, only: [:edit, :update, :fotos_ensayos]
 
   def index; end
 
@@ -43,6 +43,9 @@ class EncuentrosController < AdminController
     end
 
     redirect_to encuentros_path
+  end
+
+  def fotos_ensayos
   end
 
   private
