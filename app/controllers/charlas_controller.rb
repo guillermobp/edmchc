@@ -35,7 +35,14 @@ class CharlasController < AdminController
     end
   end
 
-  def destroy; end
+  def destroy
+    if @charla.destroy
+      flash[:notice] = 'La charla ha sido eliminada permanentemente'
+    else
+      flash[:alert] = 'Ocurrió un error intentando eliminar la charla'
+    end
+    redirect_to encuentro_charlas_path(@charla.encuentro)
+  end
 
   def fotos
     @fotos = Charla.find(params[:id]).fotos

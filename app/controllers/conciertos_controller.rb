@@ -35,7 +35,14 @@ class ConciertosController < AdminController
     end
   end
 
-  def destroy; end
+  def destroy
+    if @concierto.destroy
+      flash[:notice] = 'El concierto ha sido eliminado permanentemente'
+    else
+      flash[:alert] = 'Ocurrió un error intentando eliminar el concierto'
+    end
+    redirect_to encuentro_conciertos_path(@concierto.encuentro)
+  end
 
   def fotos
     @fotos = Concierto.find(params[:id]).fotos
