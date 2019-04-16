@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get 'admin', to: 'admin#index'
+  get 'admin', to: 'admin#index', as: :admin
 
   resources :encuentros, shallow: true do
     resources :exponentes,
