@@ -35,7 +35,14 @@ class ExponentesController < AdminController
     end
   end
 
-  def destroy; end
+  def destroy
+    if @exponente.destroy
+      flash[:notice] = 'El exponente ha sido eliminado permanentemente'
+    else
+      flash[:alert] = 'Ocurrió un error intentando eliminar el exponente'
+    end
+    redirect_to encuentro_exponentes_path(@exponente.encuentro)
+  end
 
   private
 

@@ -1,5 +1,5 @@
 class EncuentrosController < AdminController
-  before_action :find_encuentro, only: [:edit, :update]
+  before_action :find_encuentro, only: [:edit, :update, :destroy]
 
   def index; end
 
@@ -34,15 +34,12 @@ class EncuentrosController < AdminController
   end
 
   def destroy
-    purge_attachments
-
     if @encuentro.destroy
       flash[:notice] = 'El encuentro ha sido eliminado exitosamente'
     else
       flash[:alert] = 'Ocurrió un error intentando eliminar el encuentro'
     end
-
-    redirect_to encuentros_path
+    redirect_to admin_path
   end
 
   private
@@ -71,17 +68,4 @@ class EncuentrosController < AdminController
     @encuentro = @encuentro_tabs = Encuentro.find(params[:id])
   end
 
-  def purge_attachments
-    @encuentro.banner_promocional.purge
-    @encuentro.video.purge
-    @encuentro.logos.purge
-    @encuentro.fotos.purge
-    @encuentro.fotos_ensayos.purge
-    @encuentro.foto_quienes_somos.purge
-    @encuentro.foto_coordinador.purge
-    @encuentro.imagenes_prensa.purge
-    @encuentro.charlas.each { |c| c.fotos.purge }
-    @encuentro.exponentes.each { |e| e.foto.purge }
-    @encuentro.conciertos.each { |c| c.fotos.purge }
-  end
 end
