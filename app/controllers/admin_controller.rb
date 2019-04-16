@@ -9,10 +9,6 @@ class AdminController < ApplicationController
 
   def init_globals
     @encuentros = Encuentro.all
-    @tab = [
-      'charlas',
-      'conciertos',
-      'exponentes'
-    ].index(params[:controller]) ? params[:controller] : 'generales'
+    @tab = "#{params[:controller]}_#{params[:action]}"
   end
 end
