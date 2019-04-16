@@ -1,0 +1,32 @@
+<article class="message">
+  <div class="message-header">
+    <p>Habilitar/Deshabilitar Encuentro</p>
+  </div>
+  <div class="message-body">
+    <p>El estado del encuentro determina si estará disponible a los visitantes de la página.</p>
+    <p>Por defecto, el encuentro habilitado más reciente es el que se muestra al llegar a la página principal.</p>
+    <p>El cambio de este estado puede realizarse las veces que estime conveniente.</p>
+    <br>
+    <%= form_with model: @encuentro do |f| %>
+      <%= f.hidden_field :url, value: encuentro_configuracion_path(@encuentro) %>
+      <%= f.hidden_field :habilitado, value: !@encuentro.habilitado? %>
+      <%= f.submit @encuentro.habilitado? ? 'Deshabilitar' : 'Habilitar', class: 'button is-link' %>
+    <% end %>
+  </div>
+</article>
+
+<article class="message">
+  <div class="message-header">
+    <p>Eliminar Encuentro</p>
+  </div>
+  <div class="message-body">
+    <p>Eliminar un encuentro elimina todos los datos que tiene asociados de forma permanente.</p>
+    <p>Esta acción es irreversible.</p>
+    <br>
+    <%= link_to 'Eliminar Encuentro',
+                encuentro_path(@encuentro),
+                method: :delete,
+                data: { confirm: '¿Está seguro?' },
+                class: 'button is-danger' %>
+  </div>
+</article>

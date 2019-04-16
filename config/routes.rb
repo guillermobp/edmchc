@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   get '/charlas/:id/fotos', to: 'charlas#fotos', as: :charla_fotos
   get '/conciertos/:id/fotos', to: 'conciertos#fotos', as: :concierto_fotos
+  get '/encuentros/:id/configuracion', to: 'encuentros#configuracion', as: :encuentro_configuracion
 end
