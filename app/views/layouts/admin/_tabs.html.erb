@@ -13,6 +13,9 @@
       <li class="<%= 'is-active' if @tab == 'exponentes_index' %>">
         <%= link_to 'Exponentes', encuentro_exponentes_path(@encuentro_tabs) %>
       </li>
+      <li class="<%= 'is-active' if @tab == 'encuentros_configuracion' %>">
+        <%= link_to 'Configuración', encuentro_configuracion_path(@encuentro_tabs) %>
+      </li>
     </ul>
   </div>
 </div>
