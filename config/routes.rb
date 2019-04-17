@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'admin', to: 'admin#index', as: :admin
+  get 'home', to: 'home#index'
+  get 'home2', to: 'home2#index'
 
   resources :encuentros, shallow: true do
     resources :exponentes,

@@ -1,0 +1,18 @@
+<%  if @encuentro.mostrar_banner_promocional? %>
+<%= render 'promocional' %>
+<% else %>
+<%= render 'inicio' %>
+<% end %>
+
+<%= render 'quienes_somos' %>
+<%= render 'exponentes' %>
+<%= render 'charlas' %>
+<%= render partial: 'parallax', locals: { center: 'top' } %>
+<%= render 'conciertos' %>
+<%= render 'fotos_ensayos' %>
+<%= render 'fotos' %>
+<%= render 'videos' %>
+<%= render partial: 'parallax', locals: { center: 'bottom' } %>
+<%= render 'prensa' %>
+
+<%= render 'navbar' %>
