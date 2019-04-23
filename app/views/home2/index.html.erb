@@ -1,18 +1,31 @@
 <%  if @encuentro.mostrar_banner_promocional? %>
-<%= render 'promocional' %>
+  <%= render 'promocional' %>
 <% else %>
-<%= render 'inicio' %>
+  <%= render 'inicio' %>
 <% end %>
 
 <%= render 'quienes_somos' %>
+
+<%= render partial: 'parallax', locals: { i: @fotos_aleatorias[0], c: 'parallax-home-foto' } %>
+
 <%= render 'exponentes' %>
+
+<%= render partial: 'parallax', locals: { i: @fotos_aleatorias[1], c: 'parallax-home-foto' } %>
+
 <%= render 'charlas' %>
-<%= render partial: 'parallax', locals: { center: 'top' } %>
+
+<%= render partial: 'parallax', locals: { i: @fotos_aleatorias[2], c: 'parallax-home-foto' } %>
+
 <%= render 'conciertos' %>
+
 <%= render 'fotos_ensayos' %>
+
 <%= render 'fotos' %>
+
 <%= render 'videos' %>
-<%= render partial: 'parallax', locals: { center: 'bottom' } %>
+
 <%= render 'prensa' %>
+
+<%= render partial: 'parallax', locals: { i: asset_path('dodecagono_web.svg'), c: 'parallax-home-dodecagono' } %>
 
 <%= render 'navbar' %>

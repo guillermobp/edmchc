@@ -28,4 +28,11 @@ document.addEventListener("turbolinks:load", function() {
     center: 0.5,
     safeHeight: 0.15
   }).init();
+
+  new Parallax(".parallax-bgimg", {
+    //offsetYBounds: 0,
+    // intensity: 75,
+    center: 0.5,
+    // safeHeight: 0.15
+  }).init();
 });
