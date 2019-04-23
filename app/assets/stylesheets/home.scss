@@ -15,6 +15,15 @@ body {
   margin-bottom: 3.25rem;
   font-family: "Fira Sans";
 
+  img.parallax-home-foto {
+    filter: grayscale(1) brightness(.9) contrast(1.2);
+  }
+
+  img.parallax-home-dodecagono {
+    width: 48%;
+    padding: 2rem;
+  }
+
   h1 {
     &.title {
       color: #ba5e66ff;
