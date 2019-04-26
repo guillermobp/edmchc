@@ -12,6 +12,11 @@
           <%= icon('fas', 'images') %>
         </span>
       </th>
+      <th class="imagenes">
+        <span class="icon">
+          <%= icon('fas', 'video') %>
+        </span>
+      </th>
       <th class="acciones"></th>
     </tr>
   </thead>
@@ -25,6 +30,11 @@
         <td>
           <span class="icon">
             <%= icon('fas', 'check') if c.fotos.attached? %>
+          </span>
+        </td>
+        <td>
+          <span class="icon">
+            <%= icon('fas', 'check') if c.tiene_video? %>
           </span>
         </td>
         <td>
