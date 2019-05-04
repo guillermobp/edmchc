@@ -1,6 +1,8 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "bulma";
 @import "lightbox";
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans|Fira+Sans+Condensed|Fira+Sans+Extra+Condensed");
@@ -117,7 +119,8 @@ body {
           flex-wrap: wrap;
         }
       }
-    } // #inicio
+    }
+    // #inicio
 
     &#videos {
       .card {
@@ -128,6 +131,7 @@ body {
           margin: auto;
           color: white;
         }
+
         .subtitle {
           font-weight: bold;
           color: #e2b728ff;
@@ -137,23 +141,53 @@ body {
 
     &.dodecagono {
       background-color: #231f20ff;
+
       div.hero-body {
         padding: 0;
       }
-    } // .dodecagono
+    }
+    // .dodecagono
   }
-
   // Galería en escala de grises.
   .galeria {
     .columns:hover {
       filter: grayscale(100%);
+
       .column {
         filter: opacity(25%);
+
         &:hover {
           filter: opacity(100%);
           cursor: crosshair;
         }
       }
     }
-  } // .galeria
+  }
+  // .galeria
+}
+
+div.container-concierto {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  .container-concierto-texto {
+    flex-grow: 4;
+    width: 50%;
+  }
+
+  .container-concierto-links {
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+
+    .container-concierto-links {
+      font-size: 2.5rem;
+    }
+  }
 }
