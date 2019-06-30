@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #
+# Administrador
+#
+unless User.exists?(id: 1)
+  User.create(name: 'Administrador', email: 'admin@edmchc.cl', password: 'edmchc')
+end
+
+#
 # Encuentro 2017
 #
 unless Encuentro.exists?(version: 2017)
