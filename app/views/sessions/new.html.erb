@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edmchc</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="has-background-light">
+
+    <div class="container has-background-light">
+
+      <div class="box">
+        <% if flash[:notice] %>
+          <div class="notification is-success"><%= flash[:notice] %></div>
+          <% elsif flash.alert %>
+            <div class="notification is-danger"><%= flash[:alert] %></div>
+          <% end %>
+
+          <%= form_for(:session, url: login_path) do |form| %>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <%= form.label :email, class: 'label' %>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <%= form.email_field :email, class: 'input' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <%= form.label :password, class: 'label' %>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <%= form.password_field :password, class: 'input' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal"></div>
+            <div class="field-body">
+              <div class="field is-grouped">
+                <div class="control">
+                  <%= form.button class: 'button is-link' %>
+                </div>
+                <div class="control"></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <%= render 'layouts/admin/footer' %>
+    </body>
+  </html>
