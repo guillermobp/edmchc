@@ -15,7 +15,10 @@
 
     <div class="container has-background-light">
 
-      <div class="box">
+      <div class="box has-text-centered">
+        <h1 class="title">Bienvenido a la administración</h1>
+        <h2 class="subtitle">Inicie sesión para continuar</h2>
+
         <% if flash[:notice] %>
           <div class="notification is-success"><%= flash[:notice] %></div>
           <% elsif flash.alert %>
