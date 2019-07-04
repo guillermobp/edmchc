@@ -8,7 +8,11 @@ class AdminController < ApplicationController
   private
 
   def init_globals
-    @encuentros = Encuentro.all
-    @tab = "#{params[:controller]}_#{params[:action]}"
+    if (!logged_in?)
+      redirect_to login_path
+    else
+      @encuentros = Encuentro.all
+      @tab = "#{params[:controller]}_#{params[:action]}"
+    end
   end
 end
