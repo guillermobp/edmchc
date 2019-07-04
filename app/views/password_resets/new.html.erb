@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edmchc</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="has-background-light">
+
+    <div class="container has-background-light">
+
+      <div class="box has-text-centered">
+        <h1 class="title">Recuperación de Contraseña</h1>
+        <h2 class="subtitle">Ingrese su correo para recuperar la contraseña</h2>
+
+        <% if flash.alert %>
+        <div class="notification is-danger"><%= flash.alert %></div>
+        <% elsif flash.notice %>
+          <div class="notification is-success"><%= flash.notice %></div>
+        <% end %>
+
+          <%= form_for(:password_reset, url: password_resets_path) do |form| %>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <%= form.label :email, class: 'label' %>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <%= form.email_field :email, class: 'input' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal"></div>
+            <div class="field-body">
+              <div class="field is-grouped">
+                <div class="control">
+                  <%= form.submit class: 'button is-link' %>
+                </div>
+                <%= link_to 'Cancelar', login_path %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <%= render 'layouts/admin/footer' %>
+    </body>
+  </html>

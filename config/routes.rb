@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   root 'home#index'
 
   get    '/login',   to: 'sessions#new'
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#index', as: :admin
   get 'home', to: 'home#index'
   get 'home2', to: 'home2#index', as: :home2
+
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   resources :users, only: [:edit, :update]
 

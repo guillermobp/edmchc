@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edmchc</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="has-background-light">
+
+    <div class="container has-background-light">
+
+      <div class="box has-text-centered">
+        <h1 class="title">Recuperación de Contraseña</h1>
+        <h2 class="subtitle">Ingrese su correo para recuperar la contraseña</h2>
+
+        <% if flash.alert %>
+          <div class="notification is-danger"><%= flash.alert %></div>
+          <% elsif flash.notice %>
+            <div class="notification is-success"><%= flash.notice %></div>
+          <% end %>
+
+          <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+
+          <%= hidden_field_tag :email, @user.email %>
+
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <%= f.label :password, 'Contraseña', class: 'label' %>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <%= f.password_field :password, class: 'input' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <%= f.label :password_confirmation, 'Repetir contraseña', class: 'label' %>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <%= f.password_field :password_confirmation, class: 'input' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal"></div>
+            <div class="field-body">
+              <div class="field is-grouped">
+                <div class="control">
+                  <%= f.submit 'Cambiar contraseña', class: 'button is-link' %>
+                </div>
+                <%= link_to 'Cancelar', login_path %>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
+    <%= render 'layouts/admin/footer' %>
+  </body>
+</html>

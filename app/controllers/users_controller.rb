@@ -14,7 +14,16 @@ class UsersController < AdminController
       flash[:alert] = 'Ocurrió un error intentando actualizar el usuario. Revise los datos ingresados. Nombre y correo son obligatorios.'
     end
 
-    redirect_to edit_user_path(@user)
+    # Si se realizó un cambio de contraseña de forma exitosa,
+    # se cierra la sesión actual y se redirige al formulario
+    # de inicio de sesión; de lo contrario, se mantiene la
+    # página actual.
+    if user_params[:password].to_s.strip.empty?
+      redirect_to edit_user_path(@user)
+    else
+      log_out if logged_in?
+      redirect_to login_path
+    end
   end
 
   private
