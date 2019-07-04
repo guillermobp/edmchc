@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
-  
-  before_save { self.email = email.downcase }
+  attr_accessor :remember_token, :reset_token
+
+  before_save :downcase_email
   validates :name, presence: true
   validates :email, presence: true
 
@@ -34,5 +34,24 @@ class User < ApplicationRecord
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  # Sets the password reset attributes.
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attribute(:reset_digest,  User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  # Sends password reset email.
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  private
+
+  # Converts email to all lower-case.
+  def downcase_email
+    self.email = email.downcase
   end
 end
