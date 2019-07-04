@@ -51,6 +51,21 @@
           </div>
 
           <div class="field is-horizontal">
+            <div class="field-label is-normal">
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <%= form.label :remember_me, class: "checkbox inline" do %>
+                    <%= form.check_box :remember_me %>
+                    <span>Mantener sesión iniciada en este equipo</span>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
             <div class="field-label is-normal"></div>
             <div class="field-body">
               <div class="field is-grouped">
