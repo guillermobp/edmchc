@@ -16,7 +16,8 @@ class Charla < ApplicationRecord
   end
 
   def hora_inicio_display
-    hora_inicio ? I18n.l(hora_inicio, format: :short) : ''
+    #hora_inicio ? I18n.l(hora_inicio, format: :short) : ''
+    hora_inicio ? hora_inicio.strftime('%H:%M') : ''
   end
 
   def hora_termino_display
