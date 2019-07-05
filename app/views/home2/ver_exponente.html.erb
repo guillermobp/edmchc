@@ -3,7 +3,7 @@
     <div class="container is-fluid has-text-centered">
       <h1 class="title is-1">Exponentes</h1>
       <div class="columns is-multiline is-mobile">
-          <div class="column">
+          <div class="column is-6">
             <div class="card" style="height:100%">
               <div class="card-image">
                 <% if (@exponente.foto.attached?) %>
@@ -23,6 +23,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="column is-6">
+            <%= image_tag 'dodecagono_web.svg', style: 'width: 100%' %>
           </div>
       </div>
     </div>
