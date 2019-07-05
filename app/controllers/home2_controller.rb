@@ -8,4 +8,16 @@ class Home2Controller < ApplicationController
     @fotos_ensayos = @encuentro.fotos_ensayos.sample(8)
     @fotos = @encuentro.fotos.sample(8)
   end
+
+  def ver_exponente
+    @exponente = Exponente.find(params[:id])
+  end
+
+  def ver_quienes_somos
+    @encuentro = Encuentro.where(habilitado: true).last
+  end
+
+  def ver_coordinador
+    @encuentro = Encuentro.where(habilitado: true).last
+  end
 end

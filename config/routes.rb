@@ -23,4 +23,8 @@ Rails.application.routes.draw do
   get '/charlas/:id/fotos', to: 'charlas#fotos', as: :charla_fotos
   get '/conciertos/:id/fotos', to: 'conciertos#fotos', as: :concierto_fotos
   get '/encuentros/:id/configuracion', to: 'encuentros#configuracion', as: :encuentro_configuracion
+
+  get '/encuentro/quienes_somos/ver/:id', to: 'home2#ver_quienes_somos', as: :ver_quienes_somos
+  get '/encuentro/cooordinador/ver/:id', to: 'home2#ver_coordinador', as: :ver_coordinador
+  get '/exponentes/ver/:id', to: 'home2#ver_exponente', as: :ver_exponente
 end

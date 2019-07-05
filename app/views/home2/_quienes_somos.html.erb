@@ -19,7 +19,8 @@
                 </div>
               </div>
               <div class="content has-text-left">
-                <%= simple_format(@encuentro.cuerpo_quienes_somos) %>
+                <%= simple_format(truncate(@encuentro.cuerpo_quienes_somos, length: 400, separator: '')) %>
+                <p><%= link_to 'Ver más', ver_quienes_somos_path(@encuentro) %></p>
               </div>
             </div>
           </div>
@@ -41,13 +42,14 @@
                 </div>
               </div>
               <div class="content has-text-left">
-                <%= simple_format(@encuentro.bio_coordinador) %>
+                <%= simple_format(truncate(@encuentro.bio_coordinador, length:  400, separator: '')) %>
+                <p><%= link_to 'Ver más', ver_coordinador_path(@encuentro) %></p>
               </div>
             </div>
           </div>
         </div>
         <div class="column is-6">
-          <%= image_tag  'dodecagono_web.svg', style: 'width: 100%' %>
+          <%= image_tag 'dodecagono_web.svg', style: 'width: 100%' %>
         </div>
       </div>
     </div>

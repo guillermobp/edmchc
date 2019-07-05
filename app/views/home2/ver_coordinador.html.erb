@@ -1,32 +1,32 @@
-<section class="hero is-fullheight-with-navbar" id="exponentes">
+<section class="hero is-fullheight" id="exponentes">
   <div class="hero-body">
     <div class="container is-fluid has-text-centered">
-      <h1 class="title is-1">Exponentes</h1>
+      <h1 class="title is-1">Coordinador</h1>
       <div class="columns is-multiline is-mobile">
-        <% @encuentro.exponentes.each do |e|%>
-          <div class="column is-4">
+          <div class="column is-6">
             <div class="card" style="height:100%">
               <div class="card-image">
-                <% if (e.foto.attached?) %>
+                <% if (@encuentro.foto_coordinador.attached?) %>
                   <figure class="image is-square">
-                    <%= image_tag e.foto.variant( combine_options: { thumbnail: '400x400^', gravity: 'north', extent: '400x400' } ), class: 'is-square' %>
+                    <%= image_tag @encuentro.foto_coordinador.variant( combine_options: { thumbnail: '400x400^', gravity: 'north', extent: '400x400' } ), class: 'is-square' %>
                   </figure>
                 <% end %>
               </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-content">
-                    <p class="title is-4"><%= e.nombre %></p>
+                    <p class="title is-4"><%= @encuentro.nombre_coordinador %></p>
                   </div>
                 </div>
                 <div class="content has-text-left">
-                  <%= simple_format(truncate(e.bio, length: 400, separator: '')) %>
-                  <p><%= link_to 'Ver más', ver_exponente_path(e) %></p>
+                  <%= simple_format(@encuentro.bio_coordinador) %>
                 </div>
               </div>
             </div>
           </div>
-        <% end %>
+          <div class="column is-6">
+            <%= image_tag 'dodecagono_web.svg', style: 'width: 100%' %>
+          </div>
       </div>
     </div>
   </div>
