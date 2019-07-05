@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#index', as: :admin
   get 'home', to: 'home#index'
-  get 'home2', to: 'home2#index'
+  get 'home2', to: 'home2#index', as: :home2
 
   resources :users, only: [:edit, :update]
 
