@@ -52,7 +52,7 @@ class CharlasController < AdminController
   private
 
   def charla_params
-    params.require(:charla).permit(:titulo, fotos: [])
+    params.require(:charla).permit(:expositor, :titulo, :fecha, :hora_inicio, :hora_termino, fotos: [])
   end
 
   def find_encuentro
