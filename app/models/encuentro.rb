@@ -26,4 +26,21 @@ class Encuentro < ApplicationRecord
     conciertos.group_by(&:fecha)
   end
 
+  def algunos_conciertos_con_video
+    conciertos.select { |c| c.tiene_video? }.sample(3)
+  end
+
+  # Imágenes para el fondo, entre secciones.
+  def algunas_imagenes_aleatorias
+    (fotos + fotos_ensayos).sample(7)
+  end
+
+  def algunas_fotos_aleatorias_de_ensayos
+    fotos_ensayos.sample(8)
+  end
+
+  def algunas_fotos_aleatorias
+    fotos.sample(8)
+  end
+
 end

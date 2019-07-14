@@ -1,11 +1,11 @@
 <section class="galeria fotos hero is-fullheight-with-navbar" id="fotos">
   <div class="hero-body">
-    <div class="container has-text-centered">
+    <div class="container is-fluid has-text-centered">
       <h1 class="title is-1">
         <%= "Fotos #{@encuentro.version}" %>
       </h1>
       <div class="columns is-multiline is-mobile is-gapless">
-        <% @encuentro.fotos.each do |f|%>
+        <% @encuentro.algunas_fotos_aleatorias.each do |f|%>
           <div class="column is-3">
             <div class="card" style="height:100%">
               <div class="card-image">

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#index', as: :admin
   get 'home', to: 'home#index'
-  get 'home2', to: 'home2#index', as: :home2
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 
@@ -28,7 +27,7 @@ Rails.application.routes.draw do
   get '/conciertos/:id/fotos', to: 'conciertos#fotos', as: :concierto_fotos
   get '/encuentros/:id/configuracion', to: 'encuentros#configuracion', as: :encuentro_configuracion
 
-  get '/encuentro/quienes_somos/ver/:id', to: 'home2#ver_quienes_somos', as: :ver_quienes_somos
-  get '/encuentro/cooordinador/ver/:id', to: 'home2#ver_coordinador', as: :ver_coordinador
-  get '/exponentes/ver/:id', to: 'home2#ver_exponente', as: :ver_exponente
+  get '/encuentro/quienes_somos/ver/:id', to: 'home#ver_quienes_somos', as: :ver_quienes_somos
+  get '/encuentro/cooordinador/ver/:id', to: 'home#ver_coordinador', as: :ver_coordinador
+  get '/exponentes/ver/:id', to: 'home#ver_exponente', as: :ver_exponente
 end

@@ -5,8 +5,7 @@
         <%= @encuentro.version %>
       </h1>
       <div class="columns is-multiline is-mobile">
-      <% @encuentro.conciertos.each do |c| %>
-        <% if c.tiene_video? %>
+      <% @encuentro.algunos_conciertos_con_video.each do |c| %>
         <div class="column">
           <div class="card">
             <div class="card-body">
@@ -20,7 +19,6 @@
             </div>
           </div>
         </div>
-        <% end %>
       <% end %>
       </div>
     </div>

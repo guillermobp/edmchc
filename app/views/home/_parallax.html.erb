@@ -1,7 +1,3 @@
-<section class="hero dodecagono">
-  <div class="hero-body">
-    <figure style="position: relative; height: 500px; overflow: hidden;">
-      <%= image_tag asset_path("dodecagono_web.svg"), class: "parallax-#{center}" %>
-    </figure>
-  </div>
-</section>
+<figure style="overflow: hidden; background-color: black; text-align: center;">
+  <%= image_tag i, class: "parallax-bgimg #{c ||= ''}", data: { intensity: 130 } %>
+</figure>
