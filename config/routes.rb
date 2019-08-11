@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update]
 
+  resources :attachments, only: [:destroy]
+
   resources :encuentros, shallow: true do
     resources :exponentes,
               :coordinadores,

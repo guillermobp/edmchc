@@ -13,12 +13,17 @@
   <div class="field-label is-normal"></div>
   <div class="field-body">
     <div class="field">
-      <div class="control">
-        <% if @encuentro.fotos_ensayos.attached? %>
-          <% @encuentro.fotos_ensayos.each do |f| %>
-            <%= image_tag f.variant(combine_options: { thumbnail: '250x250^', gravity: 'north', extent: '250x250' }), class: 'is-square', data: { jslghtbx: url_for(f), jslghtbx_group: 'fotos-ensayos' } %>
+      <div class="control previews-container">
+        <div class="previews">
+          <% if @encuentro.fotos_ensayos.attached? %>
+            <% @encuentro.fotos_ensayos.each do |f| %>
+              <span class="image-preview">
+                <%= image_tag f.variant(combine_options: { thumbnail: '250x250^', gravity: 'north', extent: '250x250' }), class: 'is-square', data: { jslghtbx: url_for(f), jslghtbx_group: 'fotos-ensayos' } %>
+                <%= link_to icon('fas', 'trash has-text-danger'), attachment_path(f), { method: 'delete', remote: true, data: { confirm: 'Esta acción es irreversible. ¿Desea continuar?' } } %>
+              </span>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
 
         <% unless 'show' == params[:action] %>
           <div class="control">

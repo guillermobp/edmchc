@@ -24,4 +24,32 @@ document.addEventListener("turbolinks:load", async () => {
       window.open(image.img.src, '_blank');
     },
   });
+
+  for (const input of [...document.querySelectorAll('input[type=file]')]) {
+    input.addEventListener('change', async (e) => {
+      for (const f of e.target.files) {
+        const reader = new FileReader();
+
+        reader.onload = function() {
+          const img = document.createElement('img');
+          img.src = reader.result;
+          img.width = '250';
+
+          e.target
+          .closest('div.previews-container')
+          .querySelector('div.previews')
+          .appendChild(img);
+        }
+
+        await reader.readAsDataURL(f);
+      }
+    });
+  }
+
+  for (const a of [...document.querySelectorAll('a[data-remote=true][data-method=delete]')]) {
+    a.addEventListener('ajax:success', async ({ target }) => {
+      target.closest('span.image-preview').remove();
+    });
+  }
+
 });

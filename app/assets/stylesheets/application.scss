@@ -52,3 +52,19 @@ table {
     }
   }
 }
+
+span.image-preview {
+  position: relative;
+
+  &:hover a[data-method=delete] {
+    display: block;
+  }
+
+  a[data-method=delete] {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    padding: 6px;
+    display: none;
+  }
+}
