@@ -16,7 +16,7 @@
 //= require lightbox
 //= require_tree .
 
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("turbolinks:load", async () => {
   var lightbox = new Lightbox();
   lightbox.load({
     nextOnClick: false,
