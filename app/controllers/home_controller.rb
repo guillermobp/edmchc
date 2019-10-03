@@ -14,4 +14,14 @@ class HomeController < ApplicationController
   def ver_coordinador
     @encuentro = Encuentro.where(habilitado: true).last
   end
+
+  def fotos_generales
+    @encuentro = Encuentro.where(habilitado: true).last
+    render layout: 'fotos'
+  end
+
+  def fotos_ensayos
+    @encuentro = Encuentro.where(habilitado: true).last
+    render layout: 'fotos'
+  end
 end

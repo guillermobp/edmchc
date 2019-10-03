@@ -32,4 +32,7 @@ Rails.application.routes.draw do
   get '/encuentro/quienes_somos/ver/:id', to: 'home#ver_quienes_somos', as: :ver_quienes_somos
   get '/encuentro/cooordinador/ver/:id', to: 'home#ver_coordinador', as: :ver_coordinador
   get '/exponentes/ver/:id', to: 'home#ver_exponente', as: :ver_exponente
+
+  get '/fotos_generales', to: 'home#fotos_generales', as: :ver_fotos_generales
+  get '/fotos_ensayos', to: 'home#fotos_ensayos', as: :ver_fotos_ensayos
 end

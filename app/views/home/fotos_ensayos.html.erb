@@ -1,11 +1,10 @@
-<section class="galeria fotos hero is-fullheight-with-navbar" id="fotos">
+<section class="galeria fotos hero is-fullheight" id="fotos-ensayos">
   <div class="hero-body">
     <div class="container is-fluid has-text-centered">
-      <h1 class="title is-1">
-        <%= "Fotos #{@encuentro.version}" %>
-      </h1>
+      <h1 class="title is-1">Ensayos
+        <%= @encuentro.version %></h1>
       <div class="columns is-multiline is-mobile is-gapless">
-        <% @encuentro.algunas_fotos_aleatorias.each do |f|%>
+        <% @encuentro.fotos_ensayos.each do |f|%>
           <div class="column is-3">
             <div class="card" style="height:100%">
               <div class="card-image">
@@ -17,9 +16,7 @@
           </div>
         <% end %>
       </div>
-      <% if @encuentro.fotos.count > @encuentro.algunas_fotos_aleatorias.count %>
-      <%= link_to 'Ver Más Fotos', ver_fotos_generales_path, class: 'button' %>
-      <% end %>
+      <%= link_to 'Regresar', root_path, class: 'button' %>
     </div>
   </div>
 </section>

@@ -16,6 +16,9 @@
           </div>
         <% end %>
       </div>
+      <% if @encuentro.fotos_ensayos.count > @encuentro.algunas_fotos_aleatorias_de_ensayos.count %>
+      <%= link_to 'Ver Más Fotos', ver_fotos_ensayos_path, class: 'button' %>
+      <% end %>
     </div>
   </div>
 </section>

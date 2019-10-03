@@ -14,8 +14,11 @@ html {
 }
 
 body {
-  margin-bottom: 3.25rem;
   font-family: "Fira Sans";
+
+  &:not(.fotos-container) {
+    margin-bottom: 3.25rem;
+  }
 
   img.parallax-home-foto {
     filter: grayscale(1) brightness(.9) contrast(1.2);
@@ -120,7 +123,6 @@ body {
         }
       }
     }
-    // #inicio
 
     &#videos {
       .card {
