@@ -42,7 +42,7 @@ gem "bulma-rails", "~> 0.7.2"
 
 gem "aws-sdk-s3", require: false
 
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 
